@@ -3,13 +3,14 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 const userRoutes = require('./routes/userRoutes');
-
+const flatRoutes = require('./routes/flatRoutes');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use('/api', userRoutes);
+app.use("/api", flatRoutes);
 
 
 // 🔴 MongoDB connection (THIS PART IS KEY)
